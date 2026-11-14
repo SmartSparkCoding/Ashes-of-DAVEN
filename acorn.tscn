@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://oyarfucny8w8"]
+
+[ext_resource type="Script" uid="uid://dh08w7kqrsd8k" path="res://acorn.gd" id="1_pjgfi"]
+[ext_resource type="Texture2D" uid="uid://7mihsfat5dtn" path="res://daven-1,daven-2,daven-3/03cb9609c47a3537.png" id="2_erywe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(48.5, 47)
+
+[node name="Acorn" type="Area2D" unique_id=848862664]
+script = ExtResource("1_pjgfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2038773868]
+position = Vector2(-113, -145.5)
+scale = Vector2(0.375, 0.36718762)
+texture = ExtResource("2_erywe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1132991867]
+position = Vector2(-113.25, -145.5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,327 @@
+[gd_scene format=3 uid="uid://cw0r1t7iaoc3e"]
+
+[ext_resource type="Script" uid="uid://bo64wp7y8tdjw" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://na0mlxgiiwml" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://oyarfucny8w8" path="res://acorn.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://crhcbwhb78shd" path="res://time.gd" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cd82s25xxiq6u" path="res://hero-bg.jpeg" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://bl14pdju1iefm" path="res://daven-1,daven-2,daven-3/daven-1.png" id="6_dg77c"]
+[ext_resource type="Texture2D" uid="uid://csnx5kwv3k5g8" path="res://daven-1,daven-2,daven-3/daven-2.png" id="7_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://bm2aqeqwmh354" path="res://daven-1,daven-2,daven-3/daven-3.png" id="8_w48qg"]
+[ext_resource type="Texture2D" uid="uid://dy06xeyat0hyp" path="res://daven-1,daven-2,daven-3/daven-4.png" id="9_vivmo"]
+[ext_resource type="Texture2D" uid="uid://dyhmnx471gu2w" path="res://daven-1,daven-2,daven-3/daven-5.png" id="10_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://y327163to1fs" path="res://daven-1,daven-2,daven-3/daven-6.png" id="11_yaehf"]
+[ext_resource type="AudioStream" uid="uid://bpnfd7380od1p" path="res://592572__magnuswaker__flame-burst.wav" id="12_dg77c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ht1xr"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("6_dg77c")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_ycdy4")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_w48qg")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_vivmo")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_2cqfq")
+}, {
+"duration": 0.5,
+"texture": ExtResource("11_yaehf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ht1xr"]
+radius = 55.00909
+
+[sub_resource type="GDScript" id="GDScript_lquwl"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Main" type="Node2D" unique_id=1523155978]
+script = ExtResource("1_h2yge")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=595069582]
+offset_left = -1000.0
+offset_top = -558.0
+offset_right = 2183.0
+offset_bottom = 1703.0
+texture = ExtResource("6_272bh")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=722836701]
+script = ExtResource("1_0xm2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1631130652]
+position = Vector2(220, 473)
+sprite_frames = SubResource("SpriteFrames_ht1xr")
+frame_progress = 0.7992867
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=2056991302]
+position = Vector2(222, 477)
+shape = SubResource("CircleShape2D_ht1xr")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=446431593]
+position = Vector2(3, 3)
+offset = Vector2(250, 500)
+
+[node name="ScoreLabel" type="Label" parent="Player" unique_id=370962713]
+offset_left = -313.0
+offset_top = 206.0
+offset_right = 198.0
+offset_bottom = 315.0
+
+[node name="time" type="Label" parent="Player" unique_id=585046322]
+offset_left = -289.0
+offset_top = 247.0
+offset_right = -82.0
+offset_bottom = 331.0
+script = ExtResource("6_7mycd")
+
+[node name="Acorn" parent="." unique_id=848862664 instance=ExtResource("4_1bvp3")]
+position = Vector2(280, 227)
+
+[node name="Acorn2" parent="." unique_id=1877027793 instance=ExtResource("4_1bvp3")]
+position = Vector2(793, 246)
+
+[node name="Acorn3" parent="." unique_id=1909968827 instance=ExtResource("4_1bvp3")]
+position = Vector2(969, 662)
+
+[node name="Acorn5" parent="." unique_id=57298644 instance=ExtResource("4_1bvp3")]
+position = Vector2(1065, 469)
+
+[node name="Acorn6" parent="." unique_id=1372841523 instance=ExtResource("4_1bvp3")]
+position = Vector2(1106, 299)
+
+[node name="Acorn7" parent="." unique_id=732299126 instance=ExtResource("4_1bvp3")]
+position = Vector2(680, 701)
+
+[node name="Acorn22" parent="." unique_id=1162038446 instance=ExtResource("4_1bvp3")]
+position = Vector2(868, 690)
+
+[node name="Acorn23" parent="." unique_id=1681417148 instance=ExtResource("4_1bvp3")]
+position = Vector2(804, 610)
+
+[node name="Acorn24" parent="." unique_id=1973151654 instance=ExtResource("4_1bvp3")]
+position = Vector2(792, 387)
+
+[node name="Acorn25" parent="." unique_id=1645291782 instance=ExtResource("4_1bvp3")]
+position = Vector2(670, 180)
+
+[node name="Acorn26" parent="." unique_id=1281964521 instance=ExtResource("4_1bvp3")]
+position = Vector2(511, 346)
+
+[node name="Acorn27" parent="." unique_id=1720689000 instance=ExtResource("4_1bvp3")]
+position = Vector2(391, 190)
+
+[node name="Acorn28" parent="." unique_id=1107137375 instance=ExtResource("4_1bvp3")]
+position = Vector2(202, 321)
+
+[node name="Acorn29" parent="." unique_id=359934560 instance=ExtResource("4_1bvp3")]
+position = Vector2(149, 181)
+
+[node name="Acorn30" parent="." unique_id=1153664339 instance=ExtResource("4_1bvp3")]
+position = Vector2(151, 465)
+
+[node name="Acorn31" parent="." unique_id=1164026959 instance=ExtResource("4_1bvp3")]
+position = Vector2(237, 563)
+
+[node name="Acorn32" parent="." unique_id=1004241580 instance=ExtResource("4_1bvp3")]
+position = Vector2(490, 576)
+
+[node name="Acorn33" parent="." unique_id=2056990571 instance=ExtResource("4_1bvp3")]
+position = Vector2(579, 602)
+
+[node name="Acorn34" parent="." unique_id=1705998756 instance=ExtResource("4_1bvp3")]
+position = Vector2(570, 470)
+
+[node name="Acorn35" parent="." unique_id=1175428321 instance=ExtResource("4_1bvp3")]
+position = Vector2(1205, 562)
+
+[node name="Acorn38" parent="." unique_id=930232134 instance=ExtResource("4_1bvp3")]
+position = Vector2(1207, 212)
+
+[node name="Acorn39" parent="." unique_id=888842746 instance=ExtResource("4_1bvp3")]
+position = Vector2(1091, 207)
+
+[node name="Acorn40" parent="." unique_id=1987571148 instance=ExtResource("4_1bvp3")]
+position = Vector2(993, 350)
+
+[node name="Acorn41" parent="." unique_id=315910024 instance=ExtResource("4_1bvp3")]
+position = Vector2(876, 203)
+
+[node name="Acorn36" parent="." unique_id=68118094 instance=ExtResource("4_1bvp3")]
+position = Vector2(1192, 413)
+
+[node name="Acorn37" parent="." unique_id=1452540091 instance=ExtResource("4_1bvp3")]
+position = Vector2(1102, 568)
+
+[node name="Acorn8" parent="." unique_id=1546489263 instance=ExtResource("4_1bvp3")]
+position = Vector2(239, 459)
+
+[node name="Acorn9" parent="." unique_id=1350554085 instance=ExtResource("4_1bvp3")]
+position = Vector2(443, 456)
+
+[node name="Acorn10" parent="." unique_id=1819265871 instance=ExtResource("4_1bvp3")]
+position = Vector2(473, 245)
+
+[node name="Acorn11" parent="." unique_id=486475000 instance=ExtResource("4_1bvp3")]
+position = Vector2(981, 218)
+
+[node name="Acorn12" parent="." unique_id=573474916 instance=ExtResource("4_1bvp3")]
+position = Vector2(915, 368)
+
+[node name="Acorn13" parent="." unique_id=1280854495 instance=ExtResource("4_1bvp3")]
+position = Vector2(903, 467)
+
+[node name="Acorn14" parent="." unique_id=1832368559 instance=ExtResource("4_1bvp3")]
+position = Vector2(660, 551)
+
+[node name="Acorn15" parent="." unique_id=67539930 instance=ExtResource("4_1bvp3")]
+position = Vector2(297, 735)
+
+[node name="Acorn16" parent="." unique_id=2050863518 instance=ExtResource("4_1bvp3")]
+position = Vector2(175, 640)
+
+[node name="Acorn42" parent="." unique_id=342252095 instance=ExtResource("4_1bvp3")]
+position = Vector2(21, 971)
+
+[node name="Acorn43" parent="." unique_id=2053198956 instance=ExtResource("4_1bvp3")]
+position = Vector2(19, 786)
+
+[node name="Acorn44" parent="." unique_id=1243591660 instance=ExtResource("4_1bvp3")]
+position = Vector2(4, 598)
+
+[node name="Acorn45" parent="." unique_id=1155520042 instance=ExtResource("4_1bvp3")]
+position = Vector2(-122, 677)
+
+[node name="Acorn46" parent="." unique_id=1875427092 instance=ExtResource("4_1bvp3")]
+position = Vector2(-117, 439)
+
+[node name="Acorn47" parent="." unique_id=881752981 instance=ExtResource("4_1bvp3")]
+position = Vector2(-2, 434)
+
+[node name="Acorn48" parent="." unique_id=274488450 instance=ExtResource("4_1bvp3")]
+position = Vector2(-110, 549)
+
+[node name="Acorn49" parent="." unique_id=1016505390 instance=ExtResource("4_1bvp3")]
+position = Vector2(67, 704)
+
+[node name="Acorn50" parent="." unique_id=1123942645 instance=ExtResource("4_1bvp3")]
+position = Vector2(168, 819)
+
+[node name="Acorn51" parent="." unique_id=411392985 instance=ExtResource("4_1bvp3")]
+position = Vector2(325, 856)
+
+[node name="Acorn52" parent="." unique_id=1414977308 instance=ExtResource("4_1bvp3")]
+position = Vector2(378, 772)
+
+[node name="Acorn53" parent="." unique_id=1266629508 instance=ExtResource("4_1bvp3")]
+position = Vector2(504, 812)
+
+[node name="Acorn54" parent="." unique_id=99987314 instance=ExtResource("4_1bvp3")]
+position = Vector2(634, 843)
+
+[node name="Acorn55" parent="." unique_id=217969501 instance=ExtResource("4_1bvp3")]
+position = Vector2(753, 823)
+
+[node name="Acorn56" parent="." unique_id=756862680 instance=ExtResource("4_1bvp3")]
+position = Vector2(934, 832)
+
+[node name="Acorn57" parent="." unique_id=654151742 instance=ExtResource("4_1bvp3")]
+position = Vector2(879, 869)
+
+[node name="Acorn58" parent="." unique_id=1486624588 instance=ExtResource("4_1bvp3")]
+position = Vector2(694, 993)
+
+[node name="Acorn59" parent="." unique_id=122109257 instance=ExtResource("4_1bvp3")]
+position = Vector2(1365, 581)
+
+[node name="Acorn60" parent="." unique_id=903493074 instance=ExtResource("4_1bvp3")]
+position = Vector2(1052, 941)
+
+[node name="Acorn61" parent="." unique_id=345396043 instance=ExtResource("4_1bvp3")]
+position = Vector2(1209, 754)
+
+[node name="Acorn62" parent="." unique_id=1468322288 instance=ExtResource("4_1bvp3")]
+position = Vector2(1070, 679)
+
+[node name="Acorn63" parent="." unique_id=873365956 instance=ExtResource("4_1bvp3")]
+position = Vector2(891, 595)
+
+[node name="Acorn64" parent="." unique_id=289738107 instance=ExtResource("4_1bvp3")]
+position = Vector2(725, 489)
+
+[node name="Acorn65" parent="." unique_id=1931437763 instance=ExtResource("4_1bvp3")]
+position = Vector2(436, 877)
+
+[node name="Acorn66" parent="." unique_id=2130722924 instance=ExtResource("4_1bvp3")]
+position = Vector2(290, 941)
+
+[node name="Acorn67" parent="." unique_id=684839190 instance=ExtResource("4_1bvp3")]
+position = Vector2(136, 941)
+
+[node name="Acorn68" parent="." unique_id=1706591496 instance=ExtResource("4_1bvp3")]
+position = Vector2(-80, 899)
+
+[node name="Acorn69" parent="." unique_id=32390177 instance=ExtResource("4_1bvp3")]
+position = Vector2(-133, 802)
+
+[node name="Acorn70" parent="." unique_id=1797777264 instance=ExtResource("4_1bvp3")]
+position = Vector2(-193, 711)
+
+[node name="Acorn71" parent="." unique_id=1878515286 instance=ExtResource("4_1bvp3")]
+position = Vector2(70, 351)
+
+[node name="Acorn72" parent="." unique_id=15287231 instance=ExtResource("4_1bvp3")]
+position = Vector2(-137, 351)
+
+[node name="Acorn73" parent="." unique_id=2003083114 instance=ExtResource("4_1bvp3")]
+position = Vector2(-80, 267)
+
+[node name="Acorn74" parent="." unique_id=555988877 instance=ExtResource("4_1bvp3")]
+position = Vector2(2, 252)
+
+[node name="Acorn17" parent="." unique_id=895358884 instance=ExtResource("4_1bvp3")]
+position = Vector2(326, 348)
+
+[node name="Acorn18" parent="." unique_id=730889924 instance=ExtResource("4_1bvp3")]
+position = Vector2(638, 274)
+
+[node name="Acorn19" parent="." unique_id=102725362 instance=ExtResource("4_1bvp3")]
+position = Vector2(493, 698)
+
+[node name="Acorn20" parent="." unique_id=618347761 instance=ExtResource("4_1bvp3")]
+position = Vector2(1140, 686)
+
+[node name="Acorn21" parent="." unique_id=855134010 instance=ExtResource("4_1bvp3")]
+position = Vector2(1012, 769)
+
+[node name="Acorn4" parent="." unique_id=898985037 instance=ExtResource("4_1bvp3")]
+position = Vector2(694, 400)
+
+[node name="Ticker" type="Timer" parent="." unique_id=1122882523]
+autostart = true
+script = SubResource("GDScript_lquwl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=559586212]
+stream = ExtResource("12_dg77c")
+
+[connection signal="timeout" from="Ticker" to="Player/time" method="_on_ticker_timeout"]
